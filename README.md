@@ -46,7 +46,7 @@ We prepared smaller versions of the datasets used in this work consisting of 1M 
 
 ### Creating your own embeddings model
 
-### Finding biased Words
+### Finding biased words towards target sets
 
 ### Clustering words into concepts
 ### USAS categories
