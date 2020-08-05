@@ -29,7 +29,19 @@ Alos, take a look at the python notebook (.ipynb) for an step by step explanatio
 jupyter notebook
 ```
 
+# Datasets
+We prepared smaller versions of the datasets used in this work, consisting of 1M comments. The datasets are prepared to be loaded the same way the original datasets used in this work, although results might slightly vary since they are shorter versions of the originals.
+<ul>
+<li>Short [Dating Advice](https://osf.io/3rzkb) scrapped from [here](https://www.reddit.com/r/dating_advice/)</li>
+<li>Short [Atheism](https://osf.io/v2wrg) scrapped from [here](https://www.reddit.com/r/atheism/)</li>
+<li>Short [The Donald](https://osf.io/g8wsz) scrapped from [here](https://www.reddit.com/r/the_donald/)</li>
+<li>Short [The Red Pill](https://osf.io/vn6cu) scrapped from [here](https://www.trp.red/feed/) </li>
+</ul>
+
 # Experiments
+
+
+
 ### Creating your own embeddings model
 
 ### Finding biased Words
