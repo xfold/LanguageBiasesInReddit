@@ -8,7 +8,7 @@ Related to this work, we created the [Language Bias Visualiser](https://xfold.gi
 # Overview
 <ul>
   <li><b>Datasets/</b>: Folder containing the toy dataset <i>toy_1000_trp.csv</i>. Other datasets should be downloaded (see below)</li>
-  <li><b>Models</b>: Folder containing the toy model for dataset <i>toy_1000_trp.csv</i>.</li>
+  <li><b>Models/</b>: Folder containing the toy model for dataset <i>toy_1000_trp.csv</i>.</li>
   <li><b>DADDBias_ICWSM.py</b>: Library file.</li>
   <li><b>Run.py</b>: Test execution</li>
   <li><b>NotebookRun.ipynb</b>: Examples running the library</li>
