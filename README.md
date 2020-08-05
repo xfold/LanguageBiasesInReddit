@@ -1,5 +1,5 @@
 # RedditBias-ICWSM2021
-This repository contains the source code of the original paper ["Discovering and Categorising Language Biases in Reddit"]() accepted at the International Conference on Web and Social Media (ICWSM 2021). This work is part of the project [Discovering and Attesting Digital Discrimination (DADD)](https://dadd-project.org/). 
+This repository contains the source code of the original paper ["Discovering and Categorising Language Biases in Reddit"]() accepted at the International Conference on Web and Social Media (ICWSM 2021). This work is part of the project [Discovering and Attesting Digital Discrimination (DADD)](http://dadd-project.org/). 
 Related to this work, we created the [Language Bias Visualiser](https://xfold.github.io/WE-GenderBiasVisualisationWeb/), an interactive web-based platform that helps exploring different gender biases found in various datasets.
 
 <i>In this work we present a data-driven approach using word embeddings to discover and categorise language biases on the discussion platform Reddit. As spaces for isolated user communities, platforms such as Reddit are increasingly connected to issues of racism, sexism and other forms of discrimination. Hence, there is a need to monitor the language of these groups. One of the most promising AI approaches to trace linguistic biases in large textual datasets involves word embeddings, which transform text into high-dimensional dense vectors and capture semantic relations between words. Yet, previous studies require predefined sets of potential biases to study, e.g., whether gender is more or less associated with particular types of jobs. This makes these approaches unfit to deal with smaller and community-centric datasets such as those on Reddit, which contain smaller vocabularies and slang, as well as biases that may be particular to that community. This paper proposes a data-driven approach to automatically discover language biases encoded in the vocabulary of online discourse communities on Reddit. In our approach, protected attributes are connected to evaluative words found in the data, which are then categorised through a semantic analysis system. We verify the effectiveness of our method by comparing the biases we discover in the Google News dataset with those found in previous literature. We then successfully discover gender bias, religion bias, and ethnic bias in different Reddit communities. We conclude by discussing potential application scenarios and limitations of this data-driven bias discovery method.</i>
@@ -32,9 +32,9 @@ jupyter notebook
 # Datasets
 We prepared smaller versions of the datasets used in this work consisting of 1M comments. Conceptual and USAS biased in these smaller versions should be similar to the ones presented in the original paper which considered the whole dataset.
 <ul>
-<li> Short [Dating Advice](https://osf.io/3rzkb) scrapped from [here](https://www.reddit.com/r/dating_advice/)</li>
+<li> Short [Dating Advice](https://osf.io/3rzkb) scrapped from [here] (https://www.reddit.com/r/dating_advice/)</li>
 <li> Short [Atheism](https://osf.io/v2wrg) scrapped from [here](https://www.reddit.com/r/atheism/)</li>
-<li> Short [The Donald](https://osf.io/g8wsz) scrapped from [here](https://www.reddit.com/r/the_donald/)</li>
+<li> Short [The Donald] (https://osf.io/g8wsz) scrapped from [here](https://www.reddit.com/r/the_donald/)</li>
 <li> Short [The Red Pill](https://osf.io/vn6cu) scrapped from [here](https://www.trp.red/feed/) </li>
 </ul>
 
