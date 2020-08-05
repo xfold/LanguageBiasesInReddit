@@ -24,7 +24,7 @@ Now we are ready to run a toy experiment and see if everything is working (Pytho
 ```python
 python3 Run.py
 ```
-This command will train a model for a small toy dataset collected from TheRedPill included in the project, estimate its gender biases towards women and men, and cluster them in concepts. <b>Note that this process is only for testing if everything is working as expected, as we are using a set of parameters and a small dataset only to speed-up the testing process.</b>
+This command will train a model for a small toy dataset collected from TheRedPill included in the project, estimate its gender biases towards women and men, and cluster them in concepts. <b>Note that this process is only for testing if everything is working as expected, and the results might not be representative of the community explored. In Run.py we are using a set of parameters and a small dataset only to speed-up the testing process.</b>
 
 Also, take a look at the python notebook (.ipynb) included in the project in which present an step by step explanation of the different processes.
 ```python
