@@ -16,16 +16,15 @@ Related to this work, we created the [Language Bias Visualiser](https://xfold.gi
 </ul>
 
 # Setup
-TODO
 First, download or clone the repository. Once we have downloaded the repository we need to install all dependencies and libraries:
 ```python
 pip3 install -r requirements.txt
 ```
-Ready to run a toy experiment and see if everything is working (Python 3):
+Ready to run a toy experiment and see if everything is working (Python 3). This command will train a model for a small toy dataset collected from TheRedPill included in the project, estimate its gender biases towards women and men, and cluster them in concepts. Note that this process is only for testing if everything is working as expected, for more specific and accurate biases bigger datasets are required.
 ```python
 python3 Run.py
 ```
-Alos, take a look at the python notebook (.ipynb) for an step by step explanation 
+Also, take a look at the python notebook (.ipynb), in which present an step by step exploration of the results
 ```python
 jupyter notebook
 ```
