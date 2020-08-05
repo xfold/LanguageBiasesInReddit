@@ -10,13 +10,13 @@ Related to this work, we created the [Language Bias Visualiser](https://xfold.gi
 # Overview
 This repository contains the next files and folders:
 <ul>
-  <li><b>Datasets/</b>: Folder containing the toy dataset <i>toy_1000_trp.csv</i>. Other datasets should be downloaded (see below)</li>
+  <li><b>Datasets/</b>: Folder containing the toy dataset <i>toy_1000_trp.csv</i>. Other datasets should be downloaded (see below).</li>
   <li><b>Models/</b>: Folder containing the toy model for dataset <i>toy_1000_trp.csv</i>.</li>
   <li><b>DADDBias_ICWSM.py</b>: Library file.</li>
-  <li><b>Run.py</b>: Test execution</li>
-  <li><b>NotebookRun.ipynb</b>: Examples running the library</li>
-  <li><b>Readme.md</b>: This file</li>
-  <li><b>requirements.txt</b>: Requirements file</li>
+  <li><b>Run.py</b>: Test execution in python3.</li>
+  <li><b>NotebookRun.ipynb</b>: Jupyter notebook with examples on how to train and test the approach.</li>
+  <li><b>Readme.md</b>: This file.</li>
+  <li><b>requirements.txt</b>: Requirements file.</li>
 </ul>
 
 # Setup
