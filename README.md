@@ -33,17 +33,14 @@ Also, take a look at the python notebook (.ipynb) included in the project in whi
 jupyter notebook
 ```
 
-# Datasets
+# Experiments
+### Datasets
 We prepared smaller versions of the datasets used in this work consisting of 1M comments. Conceptual and USAS biased in these lightweight versions should be similar to the ones presented in the original paper (which considered the whole dataset). The original datasets were collected using the [PushShift data platform](https://pushshift.io/).
 
 [Dating Advice short](https://osf.io/3rzkb) scrapped from [here](https://www.reddit.com/r/dating_advice/)<br>
 [Atheism short](https://osf.io/v2wrg) scrapped from [here](https://www.reddit.com/r/atheism/)<br>
 [The Donald short](https://osf.io/g8wsz) scrapped from [here](https://www.reddit.com/r/the_donald/)<br>
 [The Red Pill short](https://osf.io/vn6cu) scrapped from [here](https://www.trp.red/feed/) <br>
-
-
-# Experiments
-
 
 
 ### Creating your own embeddings model
