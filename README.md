@@ -30,13 +30,14 @@ jupyter notebook
 ```
 
 # Datasets
-We prepared smaller versions of the datasets used in this work consisting of 1M comments. Conceptual and USAS biased in these lightweight versions should be similar to the ones presented in the original paper (which considered the whole dataset).
+to facilitate the testing of the approach, we prepared smaller versions of the datasets used in this work consisting of 1M comments. Conceptual and USAS biased in these lightweight versions should be similar to the ones presented in the original paper (which considered the whole dataset).
 
 [Dating Advice short](https://osf.io/3rzkb) scrapped from [here](https://www.reddit.com/r/dating_advice/)<br>
 [Atheism short](https://osf.io/v2wrg) scrapped from [here](https://www.reddit.com/r/atheism/)<br>
 [The Donald short](https://osf.io/g8wsz) scrapped from [here](https://www.reddit.com/r/the_donald/)<br>
 [The Red Pill short](https://osf.io/vn6cu) scrapped from [here](https://www.trp.red/feed/) <br>
 
+If you are interested in the original datasets, drop me a PM!
 
 # Experiments
 
