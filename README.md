@@ -30,13 +30,12 @@ jupyter notebook
 ```
 
 # Experiments
-## Creating your own embeddings model
+### Creating your own embeddings model
 
-## Finding biased Words
+### Finding biased Words
 
-## Clustering words into concepts
-
-## USAS categories
+### Clustering words into concepts
+### USAS categories
 
 # Contact
 You can find us on our website on [Discovering and Attesting Digital Discrimination](http://dadd-project.org/), or at [@DADD_project](https://twitter.com/DADD_project).
