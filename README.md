@@ -24,7 +24,7 @@ Ready to run a toy experiment and see if everything is working (Python 3). This 
 ```python
 python3 Run.py
 ```
-Also, take a look at the python notebook (.ipynb), in which present an step by step exploration of the results
+Also, take a look at the python notebook (.ipynb), in which present an step by step exploration of the results.
 ```python
 jupyter notebook
 ```
