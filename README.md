@@ -20,10 +20,12 @@ First, download or clone the repository. Then, you need to install all dependenc
 ```python
 pip3 install -r requirements.txt
 ```
-Ready to run a toy experiment and see if everything is working (Python 3). This command will train a model for a small toy dataset collected from TheRedPill included in the project, estimate its gender biases towards women and men, and cluster them in concepts. Note that this process is only for testing if everything is working as expected, for more specific and accurate biases bigger datasets are required.
+Now we are ready to run a toy experiment and see if everything is working (Python 3):
 ```python
 python3 Run.py
 ```
+This command will train a model for a small toy dataset collected from TheRedPill included in the project, estimate its gender biases towards women and men, and cluster them in concepts. <b>Note that this process is only for testing if everything is working as expected, as we are using a set of parameters and a small dataset only to speed-up the testing process.</b>
+
 Also, take a look at the python notebook (.ipynb), in which present an step by step exploration of the results.
 ```python
 jupyter notebook
