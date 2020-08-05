@@ -1,6 +1,4 @@
 # Discovering and Categorising Language Biases in Reddit
-<i>Updated Aug 2020</i><br>
-
 This repository contains the source code of the original paper ["Discovering and Categorising Language Biases in Reddit"]() accepted at the International Conference on Web and Social Media (ICWSM 2021). This work is part of the project [Discovering and Attesting Digital Discrimination (DADD)](http://dadd-project.org/). 
 Related to this work, we created the [Language Bias Visualiser](https://xfold.github.io/WE-GenderBiasVisualisationWeb/), an interactive web-based platform that helps exploring different gender biases found in various datasets.
 
@@ -57,3 +55,5 @@ We prepared smaller versions of the datasets used in this work consisting of 1M 
 
 # Contact
 You can find us on our website on [Discovering and Attesting Digital Discrimination](http://dadd-project.org/), or at [@DADD_project](https://twitter.com/DADD_project).
+<br>
+<i>Updated Aug 2020</i>
