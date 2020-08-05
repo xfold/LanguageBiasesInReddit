@@ -7,7 +7,7 @@ Related to this work, we created the [Language Bias Visualiser](https://xfold.gi
 
 # Overview
 <ul>
-  <li></li>
+  <li>Datasets/: Folder which contains the toy dataset <i>toy_1000_trp.csv</i>. Other datasets should be [downloaded](#Datasets)</li>
   <li></li>
   <li></li>
   <li></li>
