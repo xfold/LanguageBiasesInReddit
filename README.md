@@ -15,7 +15,7 @@ This repository contains the next files and folders:
   <li><b>DADDBias_ICWSM.py</b>: Library file.</li>
   <li><b>Run.py</b>: Test execution in python3.</li>
   <li><b>NotebookRun.ipynb</b>: Jupyter notebook with examples on how to train and test the approach.</li>
-  <li><b>Readme.md</b>: This file.</li>
+  <li><b>README.md</b>: This file.</li>
   <li><b>requirements.txt</b>: Requirements file.</li>
 </ul>
 
