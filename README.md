@@ -30,7 +30,7 @@ jupyter notebook
 ```
 
 # Datasets
-We prepared smaller versions of the datasets used in this work, consisting of 1M comments. The datasets are prepared to be loaded the same way the original datasets used in this work, although results might slightly vary since they are shorter versions of the originals.
+We prepared smaller versions of the datasets used in this work consisting of 1M comments. Conceptual and USAS biased in these smaller versions should be similar to the ones presented in the original paper which considered the whole dataset.
 <ul>
 <li> Short [Dating Advice](https://osf.io/3rzkb) scrapped from [here](https://www.reddit.com/r/dating_advice/)</li>
 <li> Short [Atheism](https://osf.io/v2wrg) scrapped from [here](https://www.reddit.com/r/atheism/)</li>
