@@ -37,7 +37,6 @@ to facilitate the testing of the approach, we prepared smaller versions of the d
 [The Donald short](https://osf.io/g8wsz) scrapped from [here](https://www.reddit.com/r/the_donald/)<br>
 [The Red Pill short](https://osf.io/vn6cu) scrapped from [here](https://www.trp.red/feed/) <br>
 
-If you are interested in the original datasets, drop me a PM!
 
 # Experiments
 
