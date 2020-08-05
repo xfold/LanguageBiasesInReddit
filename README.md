@@ -16,7 +16,7 @@ Related to this work, we created the [Language Bias Visualiser](https://xfold.gi
 </ul>
 
 # Setup
-First, download or clone the repository. Once we have downloaded the repository we need to install all dependencies and libraries:
+First, download or clone the repository. Then, you need to install all dependencies and libraries:
 ```python
 pip3 install -r requirements.txt
 ```
