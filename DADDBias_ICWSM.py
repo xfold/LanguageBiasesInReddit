@@ -43,7 +43,8 @@ def TrainModel(csv_document, csv_comment_column='body', outputname='outputModel'
 					pp = [wordnet_lemmatizer.lemmatize(w, pos="n") for w in pp]
 				documents.append(pp)
 			except:
-				print('\terror with row {}'.format(row))
+				if(verbose):
+					print('\terror with row {}'.format(row))
 		print('Done reading all documents')
 		return documents
 
@@ -65,7 +66,7 @@ def TrainModel(csv_document, csv_comment_column='body', outputname='outputModel'
 
      
 	print('->Starting with {} [{}], output {}, window {}, minf {}, epochs {}, ndim {}'.format(csv_document,csv_comment_column,outputname, window, minf, epochs, ndim))
-	docs = loadCSVAndPreprocess(csv_document, csv_comment_column, nrowss=None, verbose=verbose)[:1000] #TODO REMOVE
+	docs = loadCSVAndPreprocess(csv_document, csv_comment_column, nrowss=None, verbose=verbose)
 	starttime = time.time()
 	print('-> Output will be saved in {}'.format(outputname))
 	trainWEModel(docs, outputname, ndim, window, minf, epochs)
@@ -125,6 +126,10 @@ def GetTopMostBiasedWords(modelpath, topk, c1, c2, pos = ['JJ','JJR','JJS'], ver
 	#Get max and min topk biased words...
 	biasc1 = sorted( winfo, key=lambda x:x['bias'], reverse=True )[:min(len(winfo), topk)]
 	biasc2 = sorted( winfo, key=lambda x:x['bias'], reverse=False )[:min(len(winfo), topk)]
+    #move the ts2 bias to the positive space
+	for w2 in biasc2:
+		w2['bias'] = w2['bias']*-1
+    
 	return [biasc1, biasc2]
 
 
