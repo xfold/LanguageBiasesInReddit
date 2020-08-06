@@ -46,14 +46,14 @@ To create your own embeddings model in order to attest biases you only need to d
 ```python
 import DADDBias_ICWSM
 DADDBias_ICWSM.TrainModel(setup['csvfile'],   #csv file with reddit (or other platform's) comments
-           'body',                            #column with the comments
-           outputname = setup['outputFile'],  #output model filename
-           window = 4,                        #window
-           minf = 10,                         #minimum frequency (words less frequent than threshold will be ignored)
-           epochs = 100,                      #training epochs
-           ndim = 200,                        #embedding dimensions
-           verbose = False                    #verbose
-           )        
+  'body',                            # column with the comments
+  outputname = setup['outputFile'],  # output model filename
+  window = 4,                        # window
+  minf = 10,                         # minimum frequency (words less frequent than threshold will be ignored)
+  epochs = 100,                      # training epochs
+  ndim = 200,                        # embedding dimensions
+  verbose = False                    # verbose
+  )        
 ```
 
 After a while, depending on the size of the dataset and parameters used, this command will create the skip-gram model for the dataset.
@@ -66,35 +66,71 @@ Once we have an embedding model trained and two target sets (lists of words) we 
 ```python
 import DADDBias_ICWSM
 [b1,b2] = DADDBias_ICWSM.GetTopMostBiasedWords(
-           modelpath,                         #path to the embedding model
-           300,                               #top k biased words to discover
-           ts1,                               #target set 1
-           ts2,                               #target set 2
-           ['JJ','JJR','JJS'],                #interesting parts of speech to analyse
-           True)                              #verbose
+  modelpath,                         # path to the embedding model
+  300,                               # top k biased words to discover
+  ts1,                               # target set 1
+  ts2,                               # target set 2
+  ['JJ','JJR','JJS'],                # interesting parts of speech to analyse
+  True)                              # verbose
 ```
 This function returns two word lists of words, `b1` and `b2`, which contain all words from the embedding model most biased towards target set 1 (`ts1`) and target set 2 (`ts2`), respectively. Here, the target sets should be any lists of words that help describe a concept. For instance, in our work we utilise lists of words used in previous research, such as:
 ```python
-women= ["sister" , "female" , "woman" , "girl" , "daughter" , "she" , "hers" , "her"]
-men  = ["brother" , "male" , "man" , "boy" , "son" , "he" , "his" , "him"]  
+women = ["sister" , "female" , "woman" , "girl" , "daughter" , "she" , "hers" , "her"]
+men   = ["brother" , "male" , "man" , "boy" , "son" , "he" , "his" , "him"]  
 ```
 
 Finally, both `b1` and `b2` are lists of word objects such that `b1 = [w1, w2, ..., w300]`, and every word contains next attributes:
 ```python
 w1 = {
-  'word' : 'casual'             #Word 
-  'bias' : 0.217            #Bias strength towards target set 1 (in this example) when compared to target set 2
-  'freq' : 6773             #Frequency of word in the vocabulary of the model
-  'pos'  : 'JJ'             #Part of speech as determined by NLTK
-  'wv'   : np.array(..)     #Embedding of the word, used for clustering later
-  'rank' : 1834             #Frequency ranking of the word in model's vocabulary
-  'sent' : 0.2023           #Sentiment of word [-1,1], as determined by nltk.sentiment.vader
+  'word' : 'casual'                  # Word 
+  'bias' : 0.217                     # Bias strength towards target set 1 (in this example) when compared to target set 2
+  'freq' : 6773                      # Frequency of word in the vocabulary of the model
+  'pos'  : 'JJ'                      # Part of speech as determined by NLTK
+  'wv'   : np.array(..)              # Embedding of the word, used for clustering later
+  'rank' : 1834                      # Frequency ranking of the word in model's vocabulary
+  'sent' : 0.2023                    # Sentiment of word [-1,1], as determined by nltk.sentiment.vader
 }
 ```
+By exploring the different properties and values of the most biased words towards a target set when compared to another target set in that community, we can get some interesting insights about the community itself and how the two target sets compare!
 
 ### Clustering words into concepts
+In order to aggregate words into concepts and to discover the <i>conceptual biases</i> of the community towards both target sets, we use:
+```python
+import DADDBias_ICWSM
+[cl1,cl2] = DADDBias_ICWSM.Cluster(
+  b1,                                # set of baised words towards target set 1 
+  b2,                                # set of baised words towards target set 2
+  0.15,                              # r value to decide k-means k; k = r* avg(len(b1), len(b2))
+  100                                # number of times to repeat the k-means clustering, only keeping the partition with best intrasim value
+)
+```
+This process leverages the embeddings of the different set of biased words to aggregate words that are close in the embedding space. The return values of the function are the partition with best intrasim found biased towards target set 1 `cl1`, and for target set 2 `cl2`. Some cluster examples from r/TheRedPill:
+```python
+#biased towards target set women
+for cluster in cl1:
+    print( [k['word'] for k in cluster] )
+    
+>> ['promiscuous', 'promiscous']
+>> ['lesbian', 'bisexual', 'polyamorous']
+>> ['erratic', 'solipsistic', 'unreasonable', 'illogical', 'arbitrary', 'unrealistic']
+>> ['hot', 'gorgeous']
+>> ['exclusive', 'monogamous']
+>> ...
+
+#biased towards target set men
+for cluster in cl2:
+    print( [k['word'] for k in cluster] )
+    
+>> ['unapologetic', 'authentic']
+>> ['genious', 'pappy', 'disciplinarian', 'lowliest', 'venusian', 'venerable', ...]
+>> ['visionary', 'tactician', 'eccentric', 'courageous', 'charasmatic', ...]
+>> ['influential', 'powerful']
+>> ['charismatic', 'authoritative', 'assertive']
+>> ...
+```
 
 ### USAS categories
+In the paper, after identifying the conceptual biases of the community towards the different target sets, we label each one of these clusters by using the UCREL Semantic Analysis System, also named USAS. USAS is <i>a framework for the automatic semantic analysis and tagging of text, originally based on Tom McArthur’s Longman Lexicon of Contemporary English (more information on the paper)</i>. The USAS tagger forms part of Wmatrix, a paid tool for corpus analysis, however the authors also offer a free online version [here](http://ucrel-api.lancaster.ac.uk/usas/tagger.html). We automated the crawling of the most frequent label in each partition and cluster with a script, while taking care not to affect the performance of the online free version. 
 
 # Contact
 You can find us on our website on [Discovering and Attesting Digital Discrimination](http://dadd-project.org/), or at [@DADD_project](https://twitter.com/DADD_project).
