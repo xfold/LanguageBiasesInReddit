@@ -130,7 +130,9 @@ for cluster in cl2:
 ```
 
 ### USAS categories
-In the paper, after identifying the conceptual biases of the community towards the different target sets, we label each one of these clusters by using the UCREL Semantic Analysis System, also named USAS. USAS is <i>a framework for the automatic semantic analysis and tagging of text, originally based on Tom McArthur’s Longman Lexicon of Contemporary English (more information on the paper)</i>. The USAS tagger forms part of Wmatrix, a paid tool for corpus analysis, however the authors also offer a free online version [here](http://ucrel-api.lancaster.ac.uk/usas/tagger.html). We automated the crawling of the most frequent label in each partition and cluster with a script, while taking care not to affect the performance of the online free version. 
+In the paper, after identifying the conceptual biases of the community towards the different target sets, we label each one of these clusters by using the UCREL Semantic Analysis System, also named USAS. USAS is <i>a framework for the automatic semantic analysis and tagging of text, originally based on Tom McArthur’s Longman Lexicon of Contemporary English (more information on the paper)</i>. The USAS tagger forms part of Wmatrix, a paid tool for corpus analysis, however the authors also offer a free online version [here](http://ucrel-api.lancaster.ac.uk/usas/tagger.html). 
+
+In our work, we automated the crawling of the most frequent label in each cluster and partition with a simple script while taking care not to affect the performance of the online free version. However, in order to discourage the automation of this practice we are not sharing this part of the code; the same results can be obtained using the online version of the USAS tagger normally.
 
 # Contact
 You can find us on our website on [Discovering and Attesting Digital Discrimination](http://dadd-project.org/), or at [@DADD_project](https://twitter.com/DADD_project).
