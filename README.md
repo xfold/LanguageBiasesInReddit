@@ -32,7 +32,7 @@ Also, take a look at the python notebook (.ipynb) included in the project in whi
 
 # Experiments
 ### Datasets
-We prepared smaller versions of the datasets used in this work consisting of 1M comments. Conceptual and USAS biased in these lightweight versions should be similar to the ones presented in the original paper (which considered the whole dataset). The original datasets were collected using the [PushShift data platform](https://pushshift.io/).
+We prepared smaller versions of the datasets used in this work consisting of 1M comments. Conceptual and USAS biases in these lightweight versions should be similar to the ones presented in the original paper considering the whole dataset. The original datasets were collected using the [PushShift data platform](https://pushshift.io/).
 
 [The Red Pill short](https://osf.io/vn6cu) scrapped from [here](https://www.trp.red/feed/) <br>
 [Dating Advice short](https://osf.io/3rzkb) scrapped from [here](https://www.reddit.com/r/dating_advice/)<br>
@@ -42,8 +42,25 @@ We prepared smaller versions of the datasets used in this work consisting of 1M 
 
 
 ### Creating your own embeddings model
+To create your own embeddings model in order to attest biases you only need to do:
+```python
+import DADDBias_ICWSM
+DADDBias_ICWSM.TrainModel(setup['csvfile'],   #csv file with reddit (or other platform's) comments
+           'body',                            #column with the comments
+           outputname = setup['outputFile'],  #output model filename
+           window = 4,                        #window
+           minf = 10,                         #minimum frequency (words less frequent than threshold will be ignored)
+           epochs = 100,                      #training epochs
+           ndim = 200,                        #embedding dimensions
+           verbose = False                    #verbose
+           )        
+```
+
+After a while, depending on the size of the dataset and parameters used, this command will create the skip-gram model for the dataset.
+Note that this code is prepared to load comments from a .csv file, but you can also load comments from any other format modifying the `DADDBias_ICWSM.py` file. Also, the larger the dataset, the more stable the resulting embeddings and model will be.
 
 ### Finding biased words towards target sets
+Once we have our embedding model trained (or a pretrained model), we can start defining 
 
 ### Clustering words into concepts
 ### USAS categories
