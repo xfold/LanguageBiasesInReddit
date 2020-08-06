@@ -62,9 +62,38 @@ Note that this code is prepared to load comments from a .csv file, but you can a
 Finally, the larger the dataset, the more stable the resulting embeddings and model will be. For instance, the datasets explored in the paper contain over 2M comments and have an average word density (average unique new words per comment) of around 0.0003.
 
 ### Finding biased words towards target sets
-Once we have our embedding model trained (or a pretrained model), we can start defining 
+Once we have an embedding model trained and two target sets (lists of words) we want to analyse, we call:
+```python
+import DADDBias_ICWSM
+[b1,b2] = DADDBias_ICWSM.GetTopMostBiasedWords(
+           modelpath,                         #path to the embedding model
+           300,                               #top k biased words to discover
+           ts1,                               #target set 1
+           ts2,                               #target set 2
+           ['JJ','JJR','JJS'],                #interesting parts of speech to analyse
+           True)                              #verbose
+```
+This function returns two word lists of words, `b1` and `b2`, which contain all words from the embedding model most biased towards target set 1 (`ts1`) and target set 2 (`ts2`), respectively. Here, the target sets should be any lists of words that help describe a concept. For instance, in our work we utilise lists of words used in previous research, such as:
+```python
+women= ["sister" , "female" , "woman" , "girl" , "daughter" , "she" , "hers" , "her"]
+men  = ["brother" , "male" , "man" , "boy" , "son" , "he" , "his" , "him"]  
+```
+
+Finally, both `b1` and `b2` are lists of word objects such that `b1 = [w1, w2, ..., w300]`, and every word contains next attributes:
+```python
+w1 = {
+  'word' : 'casual'             #Word 
+  'bias' : 0.217            #Bias strength towards target set 1 (in this example) when compared to target set 2
+  'freq' : 6773             #Frequency of word in the vocabulary of the model
+  'pos'  : 'JJ'             #Part of speech as determined by NLTK
+  'wv'   : np.array(..)     #Embedding of the word, used for clustering later
+  'rank' : 1834             #Frequency ranking of the word in model's vocabulary
+  'sent' : 0.2023           #Sentiment of word [-1,1], as determined by nltk.sentiment.vader
+}
+```
 
 ### Clustering words into concepts
+
 ### USAS categories
 
 # Contact
