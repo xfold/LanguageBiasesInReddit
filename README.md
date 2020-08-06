@@ -57,7 +57,9 @@ DADDBias_ICWSM.TrainModel(setup['csvfile'],   #csv file with reddit (or other pl
 ```
 
 After a while, depending on the size of the dataset and parameters used, this command will create the skip-gram model for the dataset.
-Note that this code is prepared to load comments from a .csv file, but you can also load comments from any other format modifying the `DADDBias_ICWSM.py` file. Also, the larger the dataset, the more stable the resulting embeddings and model will be.
+Note that this code is prepared to load comments from a .csv file, but you can also load comments from any other format by modifying `DADDBias_ICWSM.py`. 
+
+Finally, the larger the dataset, the more stable the resulting embeddings and model will be. For instance, the datasets explored in the paper have over 2M comments on average, and an average word density (average unique new words per comment) of approximately 0.0003.
 
 ### Finding biased words towards target sets
 Once we have our embedding model trained (or a pretrained model), we can start defining 
