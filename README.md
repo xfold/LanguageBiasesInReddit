@@ -12,7 +12,7 @@ This repository contains the next files and folders:
   <li><b>Models/</b>: Folder containing the toy model for dataset <i>toy_1000_trp.csv</i>.</li>
   <li><b>DADDBias_ICWSM.py</b>: Library file which contains all functions to train and test for biases in a corpus.</li>
   <li><b>Run.py</b>: Test execution in python3.</li>
-  <li><b>NotebookRun.ipynb</b>: Jupyter notebook with examples on how to train and test the approach.</li>
+  <li><b>RunNotebook.ipynb</b>: Jupyter notebook with examples on how to train and test the approach.</li>
   <li><b>README.md</b>: This file.</li>
   <li><b>requirements.txt</b>: Requirements file.</li>
 </ul>
