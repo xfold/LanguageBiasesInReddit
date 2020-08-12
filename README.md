@@ -6,9 +6,10 @@ Related to this work, we created the [Language Bias Visualiser](https://xfold.gi
 
 To cite this work and repo, please use:
 ```
-@misc{ferrer2020discovering,
+@inproceedings{ferrer2020discovering,
     title={Discovering and Categorising Language Biases in Reddit},
     author={Xavier Ferrer and Tom van Nuenen and Jose M. Such and Natalia Criado},
+    booktitle={International AAAI Conference on Web and Social Media (ICWSM 2021) (forthcoming)},
     year={2020},
     eprint={2008.02754},
     archivePrefix={arXiv},
