@@ -6,14 +6,16 @@ Related to this work, we created the [Language Bias Visualiser](https://xfold.gi
 
 To cite this work, please use:
 ```
-@inproceedings{ferrer2020discovering,
-    title={Discovering and Categorising Language Biases in Reddit},
-    author={Xavier Ferrer and Tom van Nuenen and Jose M. Such and Natalia Criado},
-    booktitle={International AAAI Conference on Web and Social Media (ICWSM 2021) (forthcoming)},
-    year={2020},
-    eprint={2008.02754},
-    archivePrefix={arXiv},
-    primaryClass={cs.CL}
+@article{Ferrer_van Nuenen_Such_Criado_2021, 
+    title={Discovering and Categorising Language Biases in Reddit}, 
+    volume={15}, 
+    url={https://ojs.aaai.org/index.php/ICWSM/article/view/18048}, 
+    number={1}, 
+    journal={Proceedings of the International AAAI Conference on Web and Social Media}, 
+    author={Ferrer, Xavier and van Nuenen, Tom and Such, Jose M. and Criado, Natalia}, 
+    year={2021}, 
+    month={May}, 
+    pages={140-151} 
 }
 ```
 
