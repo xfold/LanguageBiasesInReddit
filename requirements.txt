@@ -1,4 +1,4 @@
-nltk==3.5
+nltk==3.6.6
 pandas==0.25.0
 scipy==1.10.0
 gensim==3.7.3
